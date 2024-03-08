@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: python-basic-170987667
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: python-basic-170987667
+    app.kubernetes.io/part-of: test-app-170987667
+  name: python-basic-170987667
+spec:
+  rules:
+  - host: python-basic-170987667-pyaqwvfr-tenant.apps.hac-devsandbox.5unc.p1.openshiftapps.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: python-basic-170987667
+            port:
+              number: 8081
+        path: /
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}
