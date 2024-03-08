@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: python-basic-170987667
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: python-basic-170987667
+    app.kubernetes.io/part-of: test-app-170987667
+  name: python-basic-170987667c2ni
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: python-basic-170987667
+    weight: null
+status: {}
